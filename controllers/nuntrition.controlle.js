@@ -1,6 +1,5 @@
-const{Nutrition} = require('../model/nutrition.model');
-
- const Nutrition_logger = async(res,req) => {
+const{Nutrition} = require('../model/nutrition');
+   const Nutrition_logger = async(res,req) => {
   try{
     const nutrition = new Nutrition(req.body);
     await nutrition.save();
@@ -13,8 +12,15 @@ const{Nutrition} = require('../model/nutrition.model');
  module.exports = Nutrition_logger;
 
 
- //controller for meal summary
+ const dailyMealSummary = async(res, req) => {
+  
+ }
 
+ const fetcgApi = async (res , req) => {
+
+const response = await axios.get('apifor meal suggestion');
+res.json(response.data);
+ }
 
 
  
